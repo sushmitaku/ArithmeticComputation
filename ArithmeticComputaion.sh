@@ -27,13 +27,13 @@ for (( i=0; i<$length; i++ ))
 do
         array[$i]=${Dictionary[$i]}
 done
-echo "length of array" ${#array[@]}
-echo "Array" ${array[@]}
+#echo length of array" ${#array[@]}
+echo "Array without sorting" ${array[@]}
 for (( i=0; i<$(( $length-1 )); i++ ))
 do
         for (( j=$(( $i+1 )); j<$length; j++ ))
         do
-                if [ ${array[i]} -gt ${array[j]} ]
+                if [ ${array[i]} -lt ${array[j]} ]
                 then
                         temp=${array[i]}
                         array[$i]=${array[j]}
@@ -41,5 +41,5 @@ do
                 fi
         done
 done
-echo "Array values after sorting" ${array[@]}
+echo "Array values after sorting in Descending Order" ${array[@]}
 
