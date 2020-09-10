@@ -6,5 +6,8 @@ echo "$a  $b  $c "
 #result1=$(( $a + $b *$c ))
 #echo $result1
 # Expression2 calculated
-result2=$(( $a * $b +$c ))
-echo $result2
+#result2=$(( $a * $b +$c ))
+#echo $result2
+result3=$(( $c + $a /$b ))
+echo $result3
+
