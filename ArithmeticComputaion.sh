@@ -4,7 +4,7 @@ declare -A Dictionary
 read -p "enter a" a
 read -p "enter b" b
 read -p "enter c" c
-i=1
+i=0
 result1=$(( $a + $b *$c ))
 Dictionary[$i]=$result1
 (( ++i ))
@@ -22,5 +22,24 @@ Dictionary[$i]=$result4
 
 # Dictionary values into array
 array=()
-array=${Dictionary[@]}
-echo ${array[@]}
+length=${#Dictionary[@]}
+for (( i=0; i<$length; i++ ))
+do
+        array[$i]=${Dictionary[$i]}
+done
+echo "length of array" ${#array[@]}
+echo "Array" ${array[@]}
+for (( i=0; i<$(( $length-1 )); i++ ))
+do
+        for (( j=$(( $i+1 )); j<$length; j++ ))
+        do
+                if [ ${array[i]} -gt ${array[j]} ]
+                then
+                        temp=${array[i]}
+                        array[$i]=${array[j]}
+                        array[$j]=$temp
+                fi
+        done
+done
+echo "Array values after sorting" ${array[@]}
+
