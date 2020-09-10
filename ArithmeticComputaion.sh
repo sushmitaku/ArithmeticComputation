@@ -17,5 +17,10 @@ Dictionary[$i]=$result3
 (( ++i ))
 result4=$(( $a % $b +$c ))
 Dictionary[$i]=$result4
-echo "Keys of Dictionary" ${!Dictionary[@]}
-echo "values of Dictionary" ${Dictionary[@]}
+#echo Keys of Dictionary" ${!Dictionary[@]}
+#echo values of Dictionary" ${Dictionary[@]}
+
+# Dictionary values into array
+array=()
+array=${Dictionary[@]}
+echo ${array[@]}
