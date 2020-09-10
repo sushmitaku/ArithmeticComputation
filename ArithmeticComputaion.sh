@@ -5,5 +5,6 @@ read -p "enter c" c
 echo "$a  $b  $c "
 #result1=$(( $a + $b *$c ))
 #echo $result1
+# Expression2 calculated
 result2=$(( $a * $b +$c ))
 echo $result2
