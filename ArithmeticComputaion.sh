@@ -33,6 +33,21 @@ for (( i=0; i<$(( $length-1 )); i++ ))
 do
         for (( j=$(( $i+1 )); j<$length; j++ ))
         do
+                if [ ${array[i]} -gt ${array[j]} ]
+                then
+                        temp=${array[i]}
+                        array[$i]=${array[j]}
+                        array[$j]=$temp
+                fi
+        done
+done
+echo "Array values after sorting in Ascending Order" ${array[@]}
+
+
+for (( i=0; i<$(( $length-1 )); i++ ))
+do
+        for (( j=$(( $i+1 )); j<$length; j++ ))
+        do
                 if [ ${array[i]} -lt ${array[j]} ]
                 then
                         temp=${array[i]}
